@@ -1,8 +1,5 @@
 # frozen_string_literal: true
 
-# Enumerable#my_all?	          spec/my_all_spec.rb
-# Enumerable#my_any?	          spec/my_any_spec.rb
-# Enumerable#my_none?	          spec/my_none_spec.rb
 # Enumerable#my_count	          spec/my_count_spec.rb
 # Enumerable#my_map	            spec/my_map_spec.rb
 # Enumerable#my_inject	        spec/my_inject_spec.rb
@@ -34,6 +31,39 @@ module Enumerable
       return false if block.call(i) == false
     end
     true
+  end
+
+  # Returns whether any element meets a given criterion.
+  def my_any?(&block)
+    my_each do |i|
+      return true if block.call(i) == true
+    end
+    false
+  end
+
+  # Returns whether no element meets a given criterion.
+  def my_none?(&block)
+    my_each do |i|
+      return false if block.call(i) == true
+    end
+    true
+  end
+
+  # Returns the count of elements, based on an argument or block criterion
+  def my_count
+    nil
+  end
+
+  # Returns an array of objects returned by the block.
+  def my_map
+    nil
+  end
+
+  # Returns an object formed from operands via either:
+  # A method named by symbol.
+  # A block to which each operand is passed.
+  def my_inject
+    nil
   end
 end
 
