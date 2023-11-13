@@ -8,8 +8,8 @@ Re-implementation of common methods used frequently through the [Ruby enumerable
 - [x] Enumerable#each_with_index
 - [x] Enumerable#select
 - [x] Enumerable#all?
-- [ ] Enumerable#any?
-- [ ] Enumerable#none?
-- [ ] Enumerable#count
-- [ ] Enumerable#map
-- [ ] Enumerable#inject
+- [x] Enumerable#any?
+- [x] Enumerable#none?
+- [x] Enumerable#count
+- [x] Enumerable#map
+- [x] Enumerable#inject
