@@ -50,8 +50,16 @@ module Enumerable
   end
 
   # Returns the count of elements, based on an argument or block criterion
-  def my_count
-    nil
+  def my_count(&block)
+    counter = 0
+    my_each do |i|
+      if block_given? == false
+        counter += 1
+      elsif block.call(i) == true
+        counter += 1
+      end
+    end
+    p counter
   end
 
   # Returns an array of objects returned by the block.
