@@ -7,7 +7,7 @@ Re-implementation of common methods used frequently through the [Ruby enumerable
 - [x] Array#each
 - [x] Enumerable#each_with_index
 - [x] Enumerable#select
-- [ ] Enumerable#all?
+- [x] Enumerable#all?
 - [ ] Enumerable#any?
 - [ ] Enumerable#none?
 - [ ] Enumerable#count
