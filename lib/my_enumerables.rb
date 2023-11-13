@@ -1,9 +1,5 @@
 # frozen_string_literal: true
 
-# Enumerable#my_count	          spec/my_count_spec.rb
-# Enumerable#my_map	            spec/my_map_spec.rb
-# Enumerable#my_inject	        spec/my_inject_spec.rb
-
 # Collection of iteration methods, inspired by Ruby's Enumerable module
 module Enumerable
   # Iterates the given block for each element with an index.
@@ -63,15 +59,23 @@ module Enumerable
   end
 
   # Returns an array of objects returned by the block.
-  def my_map
-    nil
+  def my_map(&block)
+    mapped_elements = []
+    my_each do |i|
+      mapped_elements << block.call(i)
+    end
+    mapped_elements
   end
 
   # Returns an object formed from operands via either:
   # A method named by symbol.
   # A block to which each operand is passed.
-  def my_inject
-    nil
+  def my_inject(initial_value, &block)
+    accumulated_value = initial_value
+    my_each do |i|
+      accumulated_value = block.call(accumulated_value, i)
+    end
+    accumulated_value
   end
 end
 
@@ -89,5 +93,3 @@ class Array
     self
   end
 end
-
-enumerable = [1, 1, 2, 3, 5, 8, 13, 21, 34]
